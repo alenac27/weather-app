@@ -1,0 +1,146 @@
+.weather-app {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #19314d;
+  background: linear-gradient(#dde6ed, #f3f2ec);
+  position: relative;
+}
+
+.col-6 {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.current-city {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+#current-degree {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+#location-button {
+  background: white;
+  color: #19314d;
+  border-radius: 4px;
+  border: 0px;
+  font-size: 14px;
+  padding: 5px 10px;
+  transition: all 200ms ease-in-out;
+  margin-left: 5px;
+  border: 2px solid #19314d;
+}
+
+#location-button:hover {
+  background: #19314d;
+  color: white;
+  cursor: pointer;
+}
+
+.units {
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+  margin-left: 10px;
+}
+
+.a {
+  color: #19314d;
+  text-decoration: none;
+}
+
+#submit-button {
+  background: #19314d;
+  color: white;
+  border-radius: 4px;
+  border: 0px;
+  font-size: 14px;
+  padding: 5px 10px;
+  transition: all 200ms ease-in-out;
+  margin-left: 1px;
+}
+
+#submit-button:hover {
+  background: white;
+  color: #19314d;
+  cursor: pointer;
+  border: 2px solid #19314d;
+}
+
+.col-3 {
+  align-content: center;
+}
+
+.additional-weather-data {
+  border-radius: 30px;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 5px 5px #7f8da4;
+}
+
+.humidity-percent {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.humidity-title {
+  font-size: 24px;
+}
+
+.wind-speed {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.wind-title {
+  font-size: 24px;
+}
+
+.forecast {
+  margin-top: 30px;
+}
+
+.col {
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  box-shadow: 2px 4px 4px #7f8da4;
+  transition: all 200ms ease-in-out;
+}
+
+.col:hover {
+  background: #b8cae0;
+  transform: scale(1.1);
+}
+
+.day {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.degree {
+  font-size: 32px;
+}
+
+.max-temp {
+  font-weight: 600;
+}
+
+.humidity {
+  font-size: 20px;
+  font-weight: 300;
+}
