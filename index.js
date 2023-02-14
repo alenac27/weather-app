@@ -42,8 +42,6 @@ function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#enter-city-input");
   console.log(searchInput.value);
-  let currentCity = document.querySelector(".current-city");
-  currentCity.innerHTML = `${searchInput.value}`;
   let apiKey = "62bc298785543e137bc6756e514eb1c3";
   let units = "metric";
   let city = `${searchInput.value}`;
@@ -55,16 +53,20 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
-  let city = response.data.name;
+  let currentCity = document.querySelector(".current-city");
   let messageTemp = `${temperature} °`;
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = messageTemp;
   let messageHumidity = `${humidity} %`;
   let currentHumidity = document.querySelector(".humidity-percent");
-  currentHumidity.innerHTML = messageHumidity;
   let messageWind = `${wind} km/h`;
   let currentWind = document.querySelector(".wind-speed");
+  let description = document.querySelector("#description");
+
+  currentCity.innerHTML = response.data.name;
+  currentDegree.innerHTML = messageTemp;
+  currentHumidity.innerHTML = messageHumidity;
   currentWind.innerHTML = messageWind;
+  description.innerHTML = response.data.weather[0].description;
 }
 
 let locationButton = document.querySelector("#location-button");

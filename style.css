@@ -77,14 +77,16 @@
   box-shadow: 2px 5px 5px #7f8da4;
 }
 
-.col-3 {
+.col-3,
+.col-4 {
   font-size: 48px;
   font-weight: 600;
 }
 
-.col-3 img {
-  max-width: 80%;
+#description {
+  text-transform: capitalize;
 }
+
 .humidity-title {
   font-size: 24px;
   font-weight: 400;
