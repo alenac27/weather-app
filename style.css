@@ -9,6 +9,14 @@
   position: relative;
 }
 
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
 .col-6 {
   position: absolute;
   top: 40px;
@@ -16,7 +24,7 @@
 }
 
 #current-degree {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 600;
 }
 
@@ -39,15 +47,14 @@
 }
 
 .units {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   position: relative;
   top: -20px;
-  margin-left: 10px;
 }
 
-.a {
-  color: #19314d;
+#celsius-link,
+#fahrenheit-link {
   text-decoration: none;
 }
 
@@ -81,6 +88,18 @@
 .col-4 {
   font-size: 48px;
   font-weight: 600;
+}
+
+#current-weather-icon {
+  position: relative;
+  top: -30px;
+}
+
+#description {
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  top: -60px;
 }
 
 #description::first-letter {
@@ -136,4 +155,10 @@
 .humidity {
   font-size: 20px;
   font-weight: 300;
+}
+
+.current-temp .active {
+  color: #19314d;
+  cursor: default;
+  text-decoration: none;
 }
