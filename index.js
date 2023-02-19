@@ -61,12 +61,17 @@ function showTemperature(response) {
   let messageWind = `${wind} km/h`;
   let currentWind = document.querySelector(".wind-speed");
   let description = document.querySelector("#description");
+  let currentWeatherIcon = document.querySelector("#current-weather-icon");
+  celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = response.data.name;
   currentDegree.innerHTML = messageTemp;
   currentHumidity.innerHTML = messageHumidity;
   currentWind.innerHTML = messageWind;
   description.innerHTML = response.data.weather[0].description;
+  if (description.innerHTML === "clear sky") {
+    currentWeatherIcon.setAttribute("src", "weather-icons/clear-day.svg");
+  }
 }
 
 let locationButton = document.querySelector("#location-button");
@@ -88,20 +93,21 @@ function searchLocation(position) {
 function showLocation(response) {
   let city = response.data.name;
   let currentCity = document.querySelector(".current-city");
-  currentCity.innerHTML = `${city}`;
   let searchInput = document.querySelector("#enter-city-input");
-  searchInput.value = city;
   let temperature = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let messageTemp = `${temperature} °`;
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = messageTemp;
   let messageHumidity = `${humidity} %`;
   let currentHumidity = document.querySelector(".humidity-percent");
-  currentHumidity.innerHTML = messageHumidity;
   let messageWind = `${wind} km/h`;
   let currentWind = document.querySelector(".wind-speed");
+
+  currentCity.innerHTML = `${city}`;
+  searchInput.value = city;
+  currentDegree.innerHTML = messageTemp;
+  currentHumidity.innerHTML = messageHumidity;
   currentWind.innerHTML = messageWind;
 }
 
@@ -110,15 +116,20 @@ form.addEventListener("submit", searchCity);
 
 function showTempFahrenheit(event) {
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = "46 °";
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  currentDegree.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+let celsiusTemperature = null;
 
 let fahrenheitUnit = document.querySelector("#fahrenheit-link");
 fahrenheitUnit.addEventListener("click", showTempFahrenheit);
 
 function showTempCelsius(event) {
+  event.preventDefault();
   let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = "8 °";
+  currentDegree.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusUnit = document.querySelector("#celsius-link");
