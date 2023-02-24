@@ -38,6 +38,29 @@ let currentMinute = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 h1.innerHTML = `${currentDay}`;
 h2.innerHTML = `${currentMonth} ${currentDate}, ${currentHour}:${currentMinute}`;
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let month = date.getMonth();
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let dayOfMonth = date.getDate();
+  return months[month] + " " + dayOfMonth;
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -50,7 +73,7 @@ function formatDay(timestamp) {
     "Friday",
     "Saturday",
   ];
-
+  let month = date.getMonth();
   return days[day];
 }
 
@@ -64,7 +87,9 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col" id="weather-forecast">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+       <div class="weather-forecast-date">${formatDate(forecastDay.dt)}</div>
+        <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
+        
         <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
@@ -75,10 +100,10 @@ function displayForecast(response) {
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
             forecastDay.temp.max
-          )} </span>
+          )} °</span>
           <span class="weather-forecast-temperature-min"> ${Math.round(
             forecastDay.temp.min
-          )} </span>
+          )} ° </span>
         </div>
       </div>
   `;
@@ -86,7 +111,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
@@ -203,5 +227,3 @@ function showTempCelsius(event) {
 
 let celsiusUnit = document.querySelector("#celsius-link");
 celsiusUnit.addEventListener("click", showTempCelsius);
-
-displayForecast();

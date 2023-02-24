@@ -135,21 +135,23 @@ h2 {
   transform: scale(1.1);
 }
 
-.day {
+.weather-forecast-date {
   font-size: 32px;
   font-weight: 600;
 }
 
-.date {
+.weather-forecast-day {
   font-size: 20px;
 }
 
-.degree {
+.weather-forecast-temperature-max {
   font-size: 32px;
+  font-weight: 600;
 }
 
-.max-temp {
-  font-weight: 600;
+.weather-forecast-temperature-min {
+  font-size: 32px;
+  opacity: 0.8;
 }
 
 .humidity {
@@ -161,4 +163,22 @@ h2 {
   color: #19314d;
   cursor: default;
   text-decoration: none;
+}
+
+.footer {
+  font-size: 12px;
+}
+
+#weather-forecast img {
+  width: 100px;
+  height: 100px;
+}
+
+#weather-forecast .col {
+  text-align: center;
+}
+
+#weather-forecast .weather-forecast-temperatures {
+  display: flex;
+  justify-content: center;
 }
