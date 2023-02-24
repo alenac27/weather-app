@@ -147,6 +147,7 @@ h2 {
 .weather-forecast-temperature-max {
   font-size: 32px;
   font-weight: 600;
+  padding-right: 8px;
 }
 
 .weather-forecast-temperature-min {
