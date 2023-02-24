@@ -120,7 +120,7 @@ h2 {
   margin-top: 30px;
 }
 
-.col {
+#weather-forecast {
   border-radius: 30px;
   margin: 10px;
   padding: 10px;
@@ -130,7 +130,7 @@ h2 {
   transition: all 200ms ease-in-out;
 }
 
-.col:hover {
+#weather-forecast:hover {
   background: #b8cae0;
   transform: scale(1.1);
 }
