@@ -182,3 +182,7 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+footer {
+  font-size: 14px !important;
+}
