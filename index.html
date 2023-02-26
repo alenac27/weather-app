@@ -29,9 +29,6 @@
   <body>
     <div class="weather-app">
       <div class="container">
-        <h1>Sunday</h1>
-        <h2>January 8, 15:00</h2>
-
         <div class="row">
           <div class="col-6">
             <form id="search-form">
@@ -51,8 +48,11 @@
             </form>
           </div>
         </div>
+        <h1>Sunday</h1>
+        <h2>January 8, 15:00</h2>
+
         <div class="row">
-          <div class="col-2">
+          <div class="col-lg-3">
             <img
               id="current-weather-icon"
               src="weather-icons/cloudy-1-day.svg"
@@ -61,27 +61,24 @@
             />
             <div id="description">Clear Sky</div>
           </div>
-          <div class="col-4">
+          <div class="col" id="current-temperature">
             <div class="current-city"></div>
             <div class="current-temp">
               <strong id="current-degree"></strong>
-              <span class="units">
-                <a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-              </span>
+              <span class="units"> °C </span>
             </div>
           </div>
 
-          <div class="col-3">
+          <div class="col">
             <div class="additional-weather-data">
-              <div class="humidity-percent">75 %</div>
               <div class="humidity-title">Humidity</div>
+              <div class="humidity-percent">75 %</div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col">
             <div class="additional-weather-data">
-              <div class="wind-speed">8 km/h</div>
               <div class="wind-title">Wind</div>
+              <div class="wind-speed">8 km/h</div>
             </div>
           </div>
         </div>

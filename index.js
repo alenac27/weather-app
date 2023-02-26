@@ -202,28 +202,3 @@ function showLocation(response) {
   currentHumidity.innerHTML = messageHumidity;
   currentWind.innerHTML = messageWind;
 }
-
-function showTempFahrenheit(event) {
-  let currentDegree = document.querySelector("#current-degree");
-  event.preventDefault();
-  celsiusUnit.classList.remove("active");
-  fahrenheitUnit.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  currentDegree.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitUnit = document.querySelector("#fahrenheit-link");
-fahrenheitUnit.addEventListener("click", showTempFahrenheit);
-
-function showTempCelsius(event) {
-  event.preventDefault();
-  celsiusUnit.classList.add("active");
-  fahrenheitUnit.classList.remove("active");
-  let currentDegree = document.querySelector("#current-degree");
-  currentDegree.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusUnit = document.querySelector("#celsius-link");
-celsiusUnit.addEventListener("click", showTempCelsius);
